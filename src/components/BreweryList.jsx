@@ -1,5 +1,5 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
 
 class BreweryList extends React.Component {
   constructor(props) {
@@ -10,8 +10,9 @@ class BreweryList extends React.Component {
   }
 
   handleSubmit(e) {
-    let brewery = this.props.currentBreweries[e.target.value]
-    axios.post('/saveBrewery', brewery)
+    let brewery = this.props.currentBreweries[e.target.value];
+    axios
+      .post("/saveBrewery", brewery)
       .then((result) => {
         console.log("Added to my breweries");
         this.props.getBreweries();
@@ -24,9 +25,10 @@ class BreweryList extends React.Component {
   handleDelete(e) {
     console.log(this.props.myBreweries[e.target.value].name);
     let brewery = this.props.myBreweries[e.target.value];
-    axios.post('/deleteBrewery', brewery)
+    axios
+      .post("/deleteBrewery", brewery)
       .then((result) => {
-        console.log('Brewery Deleted!')
+        console.log("Brewery Deleted!");
         this.props.getBreweries();
       })
       .catch((err) => {
@@ -44,25 +46,50 @@ class BreweryList extends React.Component {
           {this.props.currentBreweries.map((brewery, index) => {
             return (
               <div className="myBrewery-list-item" key={index}>
-                <div className="myBrewery-list-name"><b>Name:</b> {brewery.name}</div>
-                <div className="myBrewery-list-address"><b>Address:</b>  {brewery.address}</div>
-                <div className="myBrewery-list-rating"><b>Rating:</b>  {brewery.rating}</div>
-                <button type="submit" name="Submit" onClick={this.handleSubmit} value={index} >Add to My Breweries</button>
+                <div className="myBrewery-list-name">
+                  <b>Name:</b> {brewery.name}
+                </div>
+                <div className="myBrewery-list-address">
+                  <b>Address:</b> {brewery.address}
+                </div>
+                <div className="myBrewery-list-rating">
+                  <b>Rating:</b> {brewery.rating}
+                </div>
+                <button
+                  type="submit"
+                  name="Submit"
+                  onClick={this.handleSubmit}
+                  value={index}
+                >
+                  Add to My Breweries
+                </button>
               </div>
             );
           })}
         </div>
         <div className="brewery-list-mine">
-          <h3 className="brewery-list-title">
-            My Breweries!
-          </h3>
+          <h3 className="brewery-list-title">My Breweries!</h3>
           {this.props.myBreweries.map((brewery, index) => {
             return (
               <div className="brewery-list-item" key={index}>
-                <div className="brewery-list-name"><b>Name:</b>  {brewery.name}</div>
-                <div className="brewery-list-address"><b>Address:</b>  {brewery.address}</div>
-                <div className="brewery-list-rating"><b>Rating:</b>  {brewery.rating}</div>
-                <button className="brewery-list-button" type="submit" name="Submit" onClick={this.handleDelete} value={index}>Delete</button>
+                <div className="brewery-list-name">
+                  <b>Name:</b> {brewery.name}
+                </div>
+                <div className="brewery-list-address">
+                  <b>Address:</b> {brewery.address}
+                </div>
+                <div className="brewery-list-rating">
+                  <b>Rating:</b> {brewery.rating}
+                </div>
+                <button
+                  className="brewery-list-button"
+                  type="submit"
+                  name="Submit"
+                  onClick={this.handleDelete}
+                  value={index}
+                >
+                  Delete
+                </button>
               </div>
             );
           })}
@@ -70,6 +97,6 @@ class BreweryList extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default BreweryList;
