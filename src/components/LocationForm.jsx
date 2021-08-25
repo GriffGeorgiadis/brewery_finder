@@ -49,7 +49,7 @@ class LocationForm extends React.Component {
         <form>
           <label>
             Enter a city and state (ex. Boston, MA):
-            <input type="text" name="location" onChange={this.handleChange} />
+            <input className="location-form-input" type="text" name="location" onChange={this.handleChange} />
           </label>
           <button type="submit" value="Submit" onClick={this.handleSubmit}>
             Find!

@@ -31,11 +31,18 @@ img {
   margin-top: 5%;
 }
 
+/* --------- LocationForm.jsx -------- */
+
+.location-form-input {
+  margin: 0 5px 0 5px;
+}
+
 /* --------- BreweryList.jsx -------- */
 
 .brewery-list {
   margin-left: 25%;
   margin-top: 5%;
+  margin-bottom: 5%;
   display: flex;
 }
 
@@ -47,8 +54,13 @@ img {
   margin-left: 20%;
 }
 
-.brewery-list-item {
+.brewery-list-item, .myBrewery-list-item {
   margin-bottom: 3%;
   padding-left: 2%;
   border: black solid 1px;
+}
+
+.brewery-list-button {
+  margin-left: 74%;
+  margin-bottom: 2%;
 }

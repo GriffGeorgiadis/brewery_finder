@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import LocationForm from "./LocationForm.jsx";
-import GoogleMap from "./GoogleMap.jsx";
 import BreweryList from "./BreweryList.jsx";
 
 class App extends React.Component {
@@ -45,7 +44,6 @@ class App extends React.Component {
         <div className="beerImg">
           <img src="/beer"></img>
         </div>
-        {/* <GoogleMap /> */}
         <LocationForm getCurrentBreweries={this.getCurrentBreweries} />
         <BreweryList
           currentBreweries={this.state.currentBreweries}

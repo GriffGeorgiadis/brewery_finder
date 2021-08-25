@@ -3,7 +3,7 @@ const axios = require('axios');
 
 module.exports = {
   saveBrewery: (req, res) => {
-    req.body.rating = parseInt(req.body.rating);
+    req.body.rating = parseFloat(req.body.rating);
     console.log(req.body);
     console.log(req.body.name, req.body.address, req.body.rating);
 
@@ -16,7 +16,7 @@ module.exports = {
       });
   },
   getMyBreweries: (req, res) => {
-    db.query(`select * from breweries`)
+    db.query(`SELECT * FROM breweries`)
       .then((result) => {
         res.send(result.rows);
       })
@@ -39,6 +39,16 @@ module.exports = {
       .catch((err) => {
         res.send(err);
       })
+  },
+  deleteBrewery: (req, res) => {
+    console.log(req.body.name);
+    db.query(`DELETE FROM breweries WHERE name = '${req.body.name}'`)
+      .then((result) => {
+        res.send(result);
+      })
+      .catch((err) => {
+        res.send(err);
+      });
   }
 };
 
