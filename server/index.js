@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('/Users/GriffinGeorgiadis/Desktop/HackReactor/brewery-finder/public'));
+app.use("/beer", express.static(__dirname + "/../public/style/images/beer.png"));
 
 app.use(router);
 

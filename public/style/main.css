@@ -1,0 +1,54 @@
+/* --------- App.jsx -------- */
+body {
+  font-family: 'American Typewriter', serif;
+  background-color: #FFC733 ;
+}
+
+.conatiner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.title {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+  margin-top: 10%;
+}
+.beerImg {
+  grid-column: 2;
+  text-align: center;
+}
+img {
+  height: 200px;
+  width: 200px;
+}
+.location-form {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+  margin-top: 5%;
+}
+
+/* --------- BreweryList.jsx -------- */
+
+.brewery-list {
+  margin-left: 25%;
+  margin-top: 5%;
+  display: flex;
+}
+
+.brewery-list-current {
+
+}
+
+.brewery-list-mine {
+  margin-left: 20%;
+}
+
+.brewery-list-item {
+  margin-bottom: 3%;
+  padding-left: 2%;
+  border: black solid 1px;
+}
