@@ -11,6 +11,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Find A Brewery</h1>
+        <div id="map"></div>
         {/* <GoogleMap /> */}
         <LocationForm />
       </div>
