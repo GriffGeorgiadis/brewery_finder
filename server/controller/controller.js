@@ -27,7 +27,6 @@ module.exports = {
       });
   },
   getGoogleMaps: (req, res) => {
-    console.log(req.params.location);
     axios
       .get(
         `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${req.params.location}4&radius=3000&type=bar&keyword=brewery&key=AIzaSyCeooniHCOE97VH-CCasQyFGHmbirRjCY0`
@@ -50,7 +49,6 @@ module.exports = {
       });
   },
   deleteBrewery: (req, res) => {
-    console.log(req.body.name);
     db.query(`DELETE FROM breweries WHERE name = '${req.body.name}'`)
       .then((result) => {
         res.send(result);
