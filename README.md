@@ -1,6 +1,6 @@
 # Brewery Finder
 
-A web application that helps you find the closest brewery to you or in a certain area
+A web application that helps you find all the breweries in a certain area
 
 
 
